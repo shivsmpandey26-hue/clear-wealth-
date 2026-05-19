@@ -1,1 +1,325 @@
-# clear-wealth-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clear Wealth Logic</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#0d1117;
+    color:white;
+}
+
+header{
+    background:#161b22;
+    padding:20px;
+    text-align:center;
+    border-bottom:2px solid #00ff99;
+}
+
+header h1{
+    font-size:32px;
+    color:#00ff99;
+}
+
+header p{
+    color:#c9d1d9;
+    margin-top:10px;
+}
+
+.hero{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.hero h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.hero span{
+    color:#00ff99;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    color:#c9d1d9;
+    line-height:1.7;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 28px;
+    background:#00ff99;
+    color:black;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:white;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:40px 20px;
+}
+
+.card{
+    background:#161b22;
+    padding:25px;
+    border-radius:15px;
+    transition:0.3s;
+    border:1px solid #30363d;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#00ff99;
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#00ff99;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#161b22;
+    margin-top:30px;
+    color:#c9d1d9;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>Clear Wealth Logic</h1>
+    <p>Trading • Investing • Financial Learning</p>
+</header>
+
+<section class="hero">
+    <h2>Learn Smart <span>Trading</span> & Investing</h2>
+    
+    <p>
+        Welcome to Clear Wealth Logic. 
+        Here you will get trading knowledge, 
+        market updates, investing tips, 
+        chart analysis, and financial education.
+    </p>
+
+    <a href="#" class="btn">Join Telegram</a>
+</section>
+
+<section class="cards">
+
+    <div class="card">
+        <h3>📈 Market Analysis</h3>
+        <p>
+            Daily stock market analysis and 
+            trading strategies for beginners.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>💰 Investment Tips</h3>
+        <p>
+            Learn long-term investing and 
+            dividend stock strategies.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>📚 Trading Notes</h3>
+        <p>
+            Download free PDF notes and 
+            educational trading content.
+        </p>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Clear Wealth Logic | All Rights Reserved
+</footer>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clear Wealth Logic</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#0d1117;
+    color:white;
+}
+
+header{
+    background:#161b22;
+    padding:20px;
+    text-align:center;
+    border-bottom:2px solid #00ff99;
+}
+
+header h1{
+    font-size:32px;
+    color:#00ff99;
+}
+
+header p{
+    color:#c9d1d9;
+    margin-top:10px;
+}
+
+.hero{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.hero h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.hero span{
+    color:#00ff99;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    color:#c9d1d9;
+    line-height:1.7;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 28px;
+    background:#00ff99;
+    color:black;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:white;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:40px 20px;
+}
+
+.card{
+    background:#161b22;
+    padding:25px;
+    border-radius:15px;
+    transition:0.3s;
+    border:1px solid #30363d;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#00ff99;
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#00ff99;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#161b22;
+    margin-top:30px;
+    color:#c9d1d9;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>Clear Wealth Logic</h1>
+    <p>Trading • Investing • Financial Learning</p>
+</header>
+
+<section class="hero">
+    <h2>Learn Smart <span>Trading</span> & Investing</h2>
+    
+    <p>
+        Welcome to Clear Wealth Logic. 
+        Here you will get trading knowledge, 
+        market updates, investing tips, 
+        chart analysis, and financial education.
+    </p>
+
+    <a href="#" class="btn">Join Telegram</a>
+</section>
+
+<section class="cards">
+
+    <div class="card">
+        <h3>📈 Market Analysis</h3>
+        <p>
+            Daily stock market analysis and 
+            trading strategies for beginners.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>💰 Investment Tips</h3>
+        <p>
+            Learn long-term investing and 
+            dividend stock strategies.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>📚 Trading Notes</h3>
+        <p>
+            Download free PDF notes and 
+            educational trading content.
+        </p>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Clear Wealth Logic | All Rights Reserved
+</footer>
+
+</body>
+</html>
