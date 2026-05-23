@@ -1,519 +1,222 @@
  <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Clear Wealth Logic | Advanced Trading Dashboard & Learning Hub</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Wealth Logic - Learn Smart Investing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset & Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        :root {
+            --bg-color: #0b0f19;       /* Deep Slate Blue (Premium Dark Background) */
+            --card-bg: #151c2c;        /* Lighter Container Background */
+            --primary-green: #10b981;  /* Emerald Green for Growth/Trading */
+            --primary-hover: #059669;
+            --text-main: #ffffff;
+            --text-muted: #9ca3af;
+            --instagram-color: #e1306c;
+        }
 
-<style>
-:root {
-    --bg-primary: #060919;
-    --bg-surface: rgba(255, 255, 255, 0.03);
-    --border-color: rgba(255, 255, 255, 0.08);
-    --neon-green: #00ff99;
-    --neon-green-glow: rgba(0, 255, 153, 0.25);
-    --instagram-pink: #e1306c;
-    --text-muted: #94a3b8;
-}
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+        /* Main Container Layout */
+        .landing-card {
+            background-color: var(--card-bg);
+            width: 100%;
+            max-width: 480px; /* Perfect Mobile-First UI Width */
+            border-radius: 24px;
+            padding: 32px 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
 
-body {
-    background: var(--bg-primary);
-    color: #ffffff;
-    overflow-x: hidden;
-}
+        /* Header / Logo Section */
+        .brand-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 32px;
+        }
 
-/* 📊 DYNAMIC LIVE MARKET TICKER */
-.ticker-wrap {
-    width: 100%;
-    background: #0d1127;
-    overflow: hidden;
-    border-bottom: 1px solid var(--border-color);
-    padding: 10px 0;
-}
-.ticker {
-    display: inline-block;
-    white-space: nowrap;
-    padding-left: 100%;
-    animation: marquee 30s linear infinite;
-}
-.ticker-item {
-    display: inline-block;
-    padding: 0 2.5rem;
-    font-size: 14px;
-    font-weight: 600;
-}
-.ticker-green { color: #00ff99; }
-.ticker-red { color: #ff4d4d; }
-@keyframes marquee {
-    0% { transform: translate3d(0, 0, 0); }
-    100% { transform: translate3d(-100%, 0, 0); }
-}
+        .avatar-container {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid var(--primary-green);
+            padding: 3px;
+            margin-bottom: 16px;
+        }
 
-/* 💎 NAVIGATION HEADER */
-header {
-    width: 100%;
-    padding: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(6, 9, 25, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0, 255, 153, 0.2);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-}
-.logo img {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    border: 2px solid var(--neon-green);
-    box-shadow: 0 0 20px var(--neon-green-glow);
-}
-.logo-text h1 {
-    font-size: 28px;
-    color: #ffffff;
-    font-weight: 800;
-}
-.logo-text h1 span { color: var(--neon-green); }
-.logo-text p {
-    font-size: 14px;
-    color: var(--text-muted);
-}
+        .avatar-container img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
 
-/* 🔥 HERO ZONING */
-.hero {
-    padding: 80px 20px 40px 20px;
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
-}
-.hero h2 {
-    font-size: 52px;
-    line-height: 1.2;
-    margin-bottom: 25px;
-    font-weight: 800;
-}
-.hero h2 span {
-    color: var(--neon-green);
-    text-shadow: 0 0 30px rgba(0, 255, 153, 0.4);
-}
-.hero p {
-    font-size: 19px;
-    line-height: 1.8;
-    color: #cbd5e1;
-    margin-bottom: 45px;
-}
+        .brand-title {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
 
-.btn-group {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-}
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 36px;
-    background: var(--neon-green);
-    color: #000000;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 14px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(0, 255, 153, 0.25);
-}
-.btn:hover {
-    transform: translateY(-4px);
-    background: #ffffff;
-    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.4);
-}
-.btn-insta {
-    background: var(--instagram-pink);
-    color: #ffffff;
-    box-shadow: 0 8px 25px rgba(225, 48, 108, 0.3);
-}
-.btn-insta:hover {
-    background: #ffffff;
-    color: var(--instagram-pink);
-}
+        .brand-title span {
+            color: var(--primary-green);
+        }
 
-.section-title {
-    text-align: center;
-    font-size: 28px;
-    font-weight: 700;
-    color: #ffffff;
-    margin: 60px 20px 30px 20px;
-}
-.section-title span { color: var(--neon-green); }
+        .brand-tagline {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-top: 6px;
+            word-spacing: 2px;
+        }
 
-/* 📉 INTERACTIVE TRADINGVIEW CHART BLOCK */
-.chart-container {
-    max-width: 1160px;
-    margin: 0 auto 50px auto;
-    padding: 0 20px;
-}
-.chart-box {
-    background: var(--bg-surface);
-    border: 1px solid var(--border-color);
-    border-radius: 24px;
-    padding: 15px;
-    height: 500px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
+        /* Hero Content Section */
+        .hero-section {
+            margin-bottom: 32px;
+        }
 
-/* 🧮 LIVE JAVASCRIPT SIP CALCULATOR BLOCK */
-.calc-container {
-    max-width: 800px;
-    margin: 0 auto 60px auto;
-    padding: 0 20px;
-}
-.calc-box {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--border-color);
-    border-radius: 24px;
-    padding: 35px;
-    backdrop-filter: blur(10px);
-}
-.calc-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-    margin-bottom: 30px;
-}
-@media(max-width: 600px) { .calc-grid { grid-template-columns: 1fr; } }
-.calc-group { display: flex; flex-direction: column; gap: 10px; }
-.calc-group label { font-size: 15px; color: var(--text-muted); font-weight: 500; }
-.calc-group input[type="range"] { accent-color: var(--neon-green); cursor: pointer; }
-.calc-group span { font-size: 18px; font-weight: 700; color: var(--neon-green); }
-.calc-result {
-    background: rgba(0, 255, 153, 0.05);
-    border: 1px dashed var(--neon-green);
-    padding: 20px;
-    border-radius: 16px;
-    text-align: center;
-}
-.calc-result h4 { font-size: 16px; color: #ffffff; margin-bottom: 5px; }
-.calc-result p { font-size: 28px; font-weight: 800; color: var(--neon-green); }
+        .hero-heading {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
 
-/* 🎥 DYNAMIC VIDEO EMBED */
-.video-container {
-    max-width: 800px;
-    margin: 0 auto 60px auto;
-    padding: 0 20px;
-}
-.video-box {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    border-radius: 24px;
-    overflow: hidden;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-.video-box iframe {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-}
+        .hero-description {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            padding: 0 10px;
+        }
 
-/* 🎴 GRID LEARNING CARDS BLOCK */
-.container {
-    padding: 0 20px 60px 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    max-width: 1200px;
-    margin: auto;
-}
-.card {
-    background: var(--bg-surface);
-    border: 1px solid var(--border-color);
-    border-radius: 24px;
-    padding: 35px 30px;
-    transition: all 0.4s ease;
-    text-decoration: none;
-    color: #ffffff;
-}
-.card:hover {
-    transform: translateY(-8px);
-    border-color: var(--neon-green);
-    background: rgba(0, 255, 153, 0.02);
-    box-shadow: 0 15px 35px rgba(0, 255, 153, 0.12);
-}
-.card-icon { font-size: 32px; color: var(--neon-green); margin-bottom: 20px; }
-.card-icon-insta { color: var(--instagram-pink); }
-.card h3 { font-size: 22px; margin-bottom: 12px; font-weight: 700; }
-.card p { font-size: 15px; line-height: 1.7; color: var(--text-muted); }
+        /* Action Buttons (CTAs) */
+        .cta-container {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 32px;
+        }
 
-/* 📚 DOWNLOAD RESOURCE GRID */
-.download-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto 60px auto;
-    padding: 0 20px;
-}
-.dl-card {
-    background: #0d1127;
-    border: 1px solid var(--border-color);
-    padding: 25px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.dl-info h4 { font-size: 17px; margin-bottom: 4px; }
-.dl-info p { font-size: 13px; color: var(--text-muted); }
-.dl-btn {
-    background: rgba(0, 255, 153, 0.1);
-    color: var(--neon-green);
-    width: 45px; height: 45px;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    text-decoration: none; font-size: 18px; transition: 0.3s;
-}
-.dl-card:hover .dl-btn {
-    background: var(--neon-green);
-    color: #000000;
-}
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
 
-/* ⭐ TESTIMONIALS SECTION */
-.review-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto 80px auto;
-    padding: 0 20px;
-}
-.review-card {
-    background: rgba(255,255,255,0.01);
-    border: 1px solid var(--border-color);
-    padding: 30px;
-    border-radius: 20px;
-}
-.stars { color: #ffcc00; margin-bottom: 15px; font-size: 14px; }
-.review-card p { font-size: 14px; line-height: 1.6; color: #cbd5e1; font-style: italic; }
-.user-info { margin-top: 20px; display: flex; align-items: center; gap: 12px; }
-.user-info i { font-size: 24px; color: var(--neon-green); }
-.user-info h5 { font-size: 15px; font-weight: 600; }
+        .btn-youtube {
+            background-color: var(--primary-green);
+            color: #000000;
+        }
 
-/* 🔒 FOOTER */
-footer {
-    background: #03050f;
-    padding: 45px 20px;
-    text-align: center;
-    border-top: 1px solid var(--border-color);
-}
-.footer-disclaimer {
-    max-width: 900px;
-    margin: 0 auto 25px auto;
-    font-size: 12px;
-    color: #4b5563;
-    line-height: 1.6;
-    text-align: justify;
-}
-footer p.copyright { color: #4b5563; font-size: 14px; }
+        .btn-youtube:hover {
+            background-color: var(--primary-hover);
+        }
 
-@media (max-width: 768px) {
-    .hero h2 { font-size: 36px; }
-    .hero p { font-size: 16px; }
-    .logo-text h1 { font-size: 24px; }
-    .btn { width: 100%; justify-content: center; }
-}
-</style>
+        .btn-instagram {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-instagram:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: var(--instagram-color);
+        }
+
+        /* Trust & Social Proof Bar */
+        .trust-badge {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--primary-green);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+
+        /* Footer Section */
+        .footer {
+            font-size: 12px;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 16px;
+        }
+
+        .footer a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
 </head>
-
 <body>
 
-    <div class="ticker-wrap">
-        <div class="ticker">
-            <span class="ticker-item">📊 NIFTY 50: <span class="ticker-green">22,420.15 (+0.85%) ▲</span></span>
-            <span class="ticker-item">📈 SENSEX: <span class="ticker-green">73,914.30 (+0.78%) ▲</span></span>
-            <span class="ticker-item">🎯 PNB HOUSING: <span class="ticker-green">⚡ High Conviction Swing Setup</span></span>
-            <span class="ticker-item">💰 BANK NIFTY: <span class="ticker-red">47,850.20 (-0.12%) ▼</span></span>
-        </div>
-    </div>
-
-    <header>
-        <div class="logo">
-            <img src="https://i.imgur.com/Z6X8FqM.jpeg" alt="Clear Wealth Logic Logo">
-            <div class="logo-text">
-                <h1>Clear Wealth <span>Logic</span></h1>
-                <p>Trading • Investing • Financial Learning</p>
-            </div>
-        </div>
-    </header>
-
-    <section class="hero">
-        <h2>Learn Smart <span>Trading</span><br>& Strategic Investing</h2>
-        <p>Gain edge-based stock market insights, clean chart pattern models, technical price action structures, and systematic compounding mechanics from verified handles.</p>
-
-        <div class="btn-group">
-            <a href="https://youtube.com/@clearwealthlogic?si=8Te-r27bSTlaheN6" target="_blank" class="btn">
-                <i class="fab fa-youtube"></i> Visit YouTube Channel
-            </a>
-            <a href="https://www.instagram.com/clearwealth_logic?igsh=MXM0ZXBiNnpyamt6dw==" target="_blank" class="btn btn-insta">
-                <i class="fab fa-instagram"></i> Follow Instagram
-            </a>
-        </div>
-    </section>
-
-    <h3 class="section-title">Live <span>NIFTY 50 Analytics Chart</span></h3>
-    <div class="chart-container">
-        <div class="chart-box">
-            <div id="tradingview_widget" style="width:100%; height:100%;"></div>
-            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-            <script type="text/javascript">
-            new TradingView.widget({
-              "width": "100%",
-              "height": "100%",
-              "symbol": "NSE:NIFTY",
-              "interval": "D",
-              "timezone": "Asia/Kolkata",
-              "theme": "dark",
-              "style": "1",
-              "locale": "en",
-              "toolbar_bg": "#f1f3f6",
-              "enable_publishing": false,
-              "hide_side_toolbar": false,
-              "allow_symbol_change": true,
-              "container_id": "tradingview_widget"
-            });
-            </script>
-            </div>
-    </div>
-
-    <h3 class="section-title">Strategic <span>SIP Compound Calculator</span></h3>
-    <div class="calc-container">
-        <div class="calc-box">
-            <div class="calc-grid">
-                <div class="calc-group">
-                    <label>Monthly Investment: <span id="amt-val">₹5,000</span></label>
-                    <input type="range" id="amount" min="500" max="100000" step="500" value="5000" oninput="calculateSIP()">
-                </div>
-                <div class="calc-group">
-                    <label>Expected Return (p.a.): <span id="ret-val">15%</span></label>
-                    <input type="range" id="rate" min="1" max="30" step="0.5" value="15" oninput="calculateSIP()">
-                </div>
-                <div class="calc-group" style="grid-column: 1 / -1;">
-                    <label>Time Period (Years): <span id="yr-val">10 Years</span></label>
-                    <input type="range" id="years" min="1" max="30" step="1" value="10" oninput="calculateSIP()">
-                </div>
-            </div>
-            <div class="calc-result">
-                <h4>Estimated Total Wealth Built</h4>
-                <p id="sip-total">₹13,93,286</p>
-            </div>
-        </div>
-    </div>
-
-    <h3 class="section-title">Featured <span>Learning Video</span></h3>
-    <div class="video-container">
-        <div class="video-box">
-            <iframe src="https://www.youtube.com/embed/?list=UU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </div>
-
-    <h3 class="section-title">Explore Our <span>Learning Verticals</span></h3>
-    <section class="container">
-        <a href="https://youtube.com/@clearwealthlogic?si=8Te-r27bSTlaheN6" target="_blank" class="card">
-            <div class="card-icon"><i class="fas fa-chart-line"></i></div>
-            <h3>Market Analysis</h3>
-            <p>In-depth structural breakdown of NIFTY 50 setups, critical psychological key levels, and core data tracking metrics.</p>
-        </a>
-        <a href="https://youtube.com/@clearwealthlogic?si=8Te-r27bSTlaheN6" target="_blank" class="card">
-            <div class="card-icon"><i class="fas fa-wallet"></i></div>
-            <h3>Investment Logic</h3>
-            <p>Master long-term asset allocation models, multi-asset fund mechanics, and calculated systematic wealth-building plans.</p>
-        </a>
-        <a href="https://www.instagram.com/clearwealth_logic?igsh=MXM0ZXBiNnpyamt6dw==" target="_blank" class="card">
-            <div class="card-icon card-icon-insta"><i class="fas fa-book-open"></i></div>
-            <h3>Trading Notes</h3>
-            <p>Access high-retention visual PDFs, classic chart patterns guides, and strategic quick cheat-sheets inside our highlights.</p>
-        </a>
-        <a href="https://www.instagram.com/clearwealth_logic?igsh=MXM0ZXBiNnpyamt6dw==" target="_blank" class="card">
-            <div class="card-icon card-icon-insta"><i class="fas fa-brain"></i></div>
-            <h3>Trading Psychology</h3>
-            <p>Develop professional discipline patterns, manage execution risks, and systematic rules to mitigate retail capital losses.</p>
-        </a>
-    </section>
-
-    <h3 class="section-title">Free <span>Trading Resources Center</span></h3>
-    <div class="download-grid">
-        <div class="dl-card">
-            <div class="dl-info">
-                <h4>Candlestick Pattern Master Guide</h4>
-                <p>PDF Guide • 4.8 MB</p>
-            </div>
-            <a href="https://www.instagram.com/clearwealth_logic?igsh=MXM0ZXBiNnpyamt6dw==" target="_blank" class="dl-btn"><i class="fas fa-download"></i></a>
-        </div>
-        <div class="dl-card">
-            <div class="dl-info">
-                <h4>Risk Management Cheat-Sheet</h4>
-                <p>Infographic Checklist • 2.1 MB</p>
-            </div>
-            <a href="https://www.instagram.com/clearwealth_logic?igsh=MXM0ZXBiNnpyamt6dw==" target="_blank" class="dl-btn"><i class="fas fa-download"></i></a>
-        </div>
-    </div>
-
-    <h3 class="section-title">Community <span>Feedback & Trust</span></h3>
-    <div class="review-grid">
-        <div class="review-card">
-            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-            <p>"Aapka swing trading setup bohot basic aur accurate hota hai. PNB Housing ka chart breakdown ekdum perfect tha!"</p>
-            <div class="user-info"><i class="fas fa-user-circle"></i><h5>Rahul Sharma</h5></div>
-        </div>
-        <div class="review-card">
-            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-            <p>"Psychology wali videos bohot help karti hain. Over-trading control karne ka rule sabse best laga sir."</p>
-            <div class="user-info"><i class="fas fa-user-circle"></i><h5>Amit Verma</h5></div>
-        </div>
-    </div>
-
-    <footer>
-        <div class="footer-disclaimer">
-            <strong>Risk Disclosure & Disclaimer:</strong> Clear Wealth Logic is purely an educational resource created to share technical trading theory, graphical configurations, and back-tested market analysis models. We are not SEBI registered consultants or investment advisors. Financial markets involve inherent structural risks, and past results do not guarantee future returns. Please exercise diligence or consult an authorized financial representative before risking capital.
-        </div>
-        <p class="copyright">© 2026 Clear Wealth Logic • All Rights Reserved</p>
-    </footer>
-
-    <script>
-    function calculateSIP() {
-        let p = parseInt(document.getElementById('amount').value);
-        let r = parseFloat(document.getElementById('rate').value) / 12 / 100;
-        let n = parseInt(document.getElementById('years').value) * 12;
+    <div class="landing-card">
         
-        document.getElementById('amt-val').innerText = "₹" + p.toLocaleString('en-IN');
-        document.getElementById('ret-val').innerText = document.getElementById('rate').value + "%";
-        document.getElementById('yr-val').innerText = document.getElementById('years').value + " Years";
-        
-        let total = p * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
-        document.getElementById('sip-total').innerText = "₹" + Math.round(total).toLocaleString('en-IN');
-    }
-    </script>
+        <div class="brand-header">
+            <div class="avatar-container">
+                <img src="logo.png" alt="Clear Wealth Logo" onerror="this.src='https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=150&auto=format&fit=crop&q=60';">
+            </div>
+            <h1 class="brand-title">Clear Wealth <span>Logic</span></h1>
+            <p class="brand-tagline">Trading • Investing • Financial Learning</p>
+        </div>
+
+        <div class="hero-section">
+            <h2 class="hero-heading">Learn Smart Trading & Strategic Investing</h2>
+            <p class="hero-description">
+                Stock Market, Trading aur Mutual Funds ko aasan bhasha mein seekhein. No complex terms, just pure logic aur right strategies.
+            </p>
+        </div>
+
+        <div class="trust-badge">
+            Join Our Growing Community
+        </div>
+
+        <div class="cta-container">
+            <a href="https://youtube.com/@clearwealthlogic?si=pbqWc6R3olUTDx7n" class="btn btn-youtube" target="_blank">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Visit YouTube Channel
+            </a>
+            
+            <a href="https://instagram.com/clearwealthlogic" class="btn btn-instagram" target="_blank">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                Follow on Instagram
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 Clear Wealth Logic. All Rights Reserved.</p>
+            <p style="margin-top: 4px; font-size: 11px; color: #6b7280;">Managed via <a href="https://github.com" target="_blank">GitHub Pages</a></p>
+        </div>
+
+    </div>
 
 </body>
-                  </html>
+</html>
